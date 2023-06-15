@@ -36,9 +36,9 @@ body {
 }
 
 .container {
-  padding: 10rem;
+  padding: 10rem 10rem 1rem;
   width: 112rem;
-  height: 80rem;
+  height: 100vh;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -97,14 +97,13 @@ header .search {
 
 main {
   width: 100%;
-  height: 100%;
+
   position: relative;
 }
 
 main table {
   border: 1px solid var(--border-color);
   width: 100%;
-
   /* border-radius: 1.2rem; */
   text-align: left;
   border-collapse: collapse;
@@ -118,6 +117,16 @@ table thead {
 
 table thead tr {
   height: 6.4rem;
+}
+
+tbody {
+  display: block;
+  overflow-y: scroll;
+  max-height: 52rem;
+}
+
+tbody tr:nth-child(even) {
+  background: var(--bg-input-color);
 }
 
 table tr {
@@ -213,4 +222,25 @@ tr td {
   font-size: 4rem;
   line-height: 2.5rem;
   color: #4E5455;
+}
+
+/* Personalize o estilo do scroll conforme suas preferências */
+tbody::-webkit-scrollbar {
+  margin-right: 1rem;
+  width: .6rem;
+  position: absolute;
+  display: block;
+  /* Largura do scroll */
+}
+
+tbody::-webkit-scrollbar-thumb {
+  background-color: #4A808C;
+  /* Cor do thumb do scroll */
+  border-radius: 1rem;
+  /* Arredonda as bordas do thumb */
+}
+
+tbody::-webkit-scrollbar-track {
+  background-color: transparent;
+  /* Cor do track do scroll */
 }

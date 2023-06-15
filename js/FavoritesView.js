@@ -9,9 +9,18 @@ export class FavoritesView extends Favorites {
 
   createButtonEvents() {
     const buttonSearch = document.querySelector(".search button")
+    const inputSearch = document.querySelector(".search input")
     buttonSearch.onclick = () => {
-      const { value } = document.querySelector(".search input")
+      const { value } = inputSearch
       this.add(value)
+    }
+
+    inputSearch.onkeydown = (e) => {
+      const isEnterPressed = e.key === "Enter"
+      if (isEnterPressed) {
+        const { value } = inputSearch
+        this.add(value)
+      }
     }
   }
 

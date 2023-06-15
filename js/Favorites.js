@@ -6,19 +6,16 @@ export class Favorites {
 
   load() {
     this.entries = JSON.parse(localStorage.getItem("@github-favorites:")) || []
-    console.log(this.entries)
   }
 
   async add(username) {
     try {
-      console.log(this.entries)
       const userAlreadyExists = this.entries.find(entry => entry.login.toUpperCase() === username.toUpperCase())
 
       if (userAlreadyExists)
         throw new Error("Usuario ja adicionado")
 
       const user = await this.buscarGithubUser(username)
-      console.log(user)
       if (user.login === undefined)
         throw new Error("Usuario nao encontrado no github")
 
