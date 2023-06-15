@@ -226,10 +226,7 @@ tr td {
 
 /* Personalize o estilo do scroll conforme suas preferências */
 tbody::-webkit-scrollbar {
-  margin-right: 1rem;
   width: .6rem;
-  position: absolute;
-  display: block;
   /* Largura do scroll */
 }
 
